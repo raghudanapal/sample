@@ -3,14 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms'  
+import { ReactiveFormsModule} from '@angular/forms' ;
+//import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
+import { Routes, RouterModule } from '@angular/router';
+const routes: Routes = [ { path: 'register', component: RegisterComponent }];
 @NgModule({
   declarations: [
-    AppComponent
+    LoginComponent,
+    AppComponent,
+    RegisterComponent,
+    //FileSelectDirective,
+    //LoginComponent
   ],
-  imports: [
+  imports: [FileUploadModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,ReactiveFormsModule,
+  
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
